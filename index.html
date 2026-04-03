@@ -1,30 +1,495 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Política de Privacidad - Credisocio</title>
-<style>
-  body { font-family: Arial, sans-serif; max-width: 800px; margin: 40px auto; padding: 20px; color: #333; }
-  h1 { color: #1B3A6B; }
-  h2 { color: #1B3A6B; font-size: 16px; }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Política de Privacidad — Credisocio</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --azul:       #1B3A6B;
+      --verde:      #6DBF2E;
+      --azul-claro: #E8EEF7;
+      --texto:      #2c2c2c;
+      --gris:       #666;
+      --borde:      #e0e7f0;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: #f4f7fb;
+      color: var(--texto);
+      line-height: 1.75;
+      font-size: 15px;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--azul);
+      padding: 32px 24px 36px;
+      text-align: center;
+    }
+
+    .logo-row {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 13px;
+      margin-bottom: 10px;
+    }
+
+    .logo-circle {
+      width: 54px; height: 54px;
+      border-radius: 50%;
+      background: var(--verde);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 25px; font-weight: 800; color: #fff;
+      flex-shrink: 0;
+    }
+
+    .logo-name {
+      font-size: 28px;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: 3px;
+    }
+
+    .logo-name span { color: var(--verde); }
+
+    .header-tagline {
+      font-size: 13px;
+      color: rgba(255,255,255,0.6);
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    .header-title {
+      font-size: 21px;
+      font-weight: 600;
+      color: #fff;
+    }
+
+    .header-fecha {
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 12px;
+      color: rgba(255,255,255,0.5);
+      background: rgba(255,255,255,0.1);
+      padding: 4px 14px;
+      border-radius: 99px;
+    }
+
+    /* ── Contenedor ── */
+    .contenedor {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ── Intro ── */
+    .intro-box {
+      background: var(--azul-claro);
+      border-left: 4px solid var(--azul);
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 32px;
+      font-size: 14px;
+      color: var(--azul);
+      line-height: 1.6;
+    }
+
+    /* ── Sección card ── */
+    section {
+      background: #fff;
+      border-radius: 14px;
+      border: 1px solid var(--borde);
+      margin-bottom: 18px;
+      overflow: hidden;
+      box-shadow: 0 1px 4px rgba(27,58,107,0.06);
+    }
+
+    .sec-header {
+      background: var(--azul);
+      padding: 13px 20px;
+      display: flex;
+      align-items: center;
+      gap: 11px;
+    }
+
+    .sec-num {
+      width: 27px; height: 27px;
+      border-radius: 50%;
+      background: var(--verde);
+      color: #fff;
+      font-size: 13px;
+      font-weight: 700;
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .sec-titulo {
+      font-size: 14px;
+      font-weight: 600;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .sec-body {
+      padding: 20px 24px;
+    }
+
+    .sec-body p {
+      margin-bottom: 12px;
+      color: var(--texto);
+    }
+
+    .sec-body p:last-child { margin-bottom: 0; }
+
+    /* ── Listas ── */
+    ul {
+      padding-left: 20px;
+      margin-bottom: 0;
+    }
+
+    li {
+      margin-bottom: 8px;
+      color: var(--texto);
+    }
+
+    li:last-child { margin-bottom: 0; }
+
+    /* ── Badge especial ── */
+    .badge-aviso {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #fff3cd;
+      color: #856404;
+      border: 1px solid #ffc107;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 10px;
+    }
+
+    /* ── Derechos ARCO ── */
+    .arco-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
+      margin-top: 14px;
+    }
+
+    .arco-card {
+      background: var(--azul-claro);
+      border-radius: 10px;
+      padding: 14px 10px;
+      text-align: center;
+      border: 1px solid var(--borde);
+    }
+
+    .arco-letra {
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--azul);
+      line-height: 1;
+    }
+
+    .arco-nombre {
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--azul);
+      margin-top: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+
+    .arco-desc {
+      font-size: 11px;
+      color: var(--gris);
+      margin-top: 6px;
+      line-height: 1.4;
+    }
+
+    /* ── Destacado verde ── */
+    .highlight {
+      background: #edf7e1;
+      border-left: 3px solid var(--verde);
+      border-radius: 0 8px 8px 0;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #2d6a0a;
+      margin-top: 10px;
+    }
+
+    /* ── Contacto ── */
+    .contacto-box {
+      background: var(--azul);
+      border-radius: 10px;
+      padding: 18px 20px;
+      margin-top: 14px;
+    }
+
+    .contacto-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: rgba(255,255,255,0.85);
+      font-size: 14px;
+    }
+
+    .contacto-icon { font-size: 18px; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 20px;
+      font-size: 12px;
+      color: var(--gris);
+      border-top: 1px solid var(--borde);
+      line-height: 1.8;
+    }
+
+    footer strong { color: var(--azul); }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .logo-name  { font-size: 22px; }
+      .logo-circle { width: 44px; height: 44px; font-size: 20px; }
+      .header-title { font-size: 17px; }
+      .contenedor { padding: 24px 12px 60px; }
+      .sec-body { padding: 16px; }
+      .arco-grid { grid-template-columns: 1fr 1fr; }
+    }
+
+    @media (max-width: 380px) {
+      .arco-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
 </head>
 <body>
-<h1>Política de Privacidad de Credisocio</h1>
-<p><em>Última actualización: Abril 2026</em></p>
-<h2>1. INFORMACIÓN QUE RECOPILAMOS</h2>
-<p>Credisocio recopila la siguiente información personal: nombre completo, número de teléfono celular, CURP, domicilio, fotografías de documentos de identidad (INE frente y reverso), comprobante de domicilio, selfie para verificación de identidad y datos de referencia personal.</p>
-<h2>2. USO DE LA INFORMACIÓN</h2>
-<p>La información recopilada se utiliza exclusivamente para: verificar la identidad del usuario, evaluar y aprobar solicitudes de crédito, gestionar el historial de pagos, generar comprobantes de pago y comunicarnos sobre tu crédito.</p>
-<h2>3. ALMACENAMIENTO Y SEGURIDAD</h2>
-<p>Toda la información se almacena de forma segura en servidores cifrados. Los documentos de identidad se guardan en almacenamiento privado. Solo el distribuidor asignado tiene acceso a tus documentos. No compartimos tu información con terceros sin tu consentimiento.</p>
-<h2>4. VERIFICACIÓN POR SMS</h2>
-<p>Al solicitar un préstamo, enviamos un código de verificación por SMS a tu número registrado. Este servicio es proporcionado por Twilio Inc. únicamente para verificar tu identidad.</p>
-<h2>5. DATOS DE PAGO</h2>
-<p>Credisocio NO procesa pagos dentro de la aplicación. Los pagos se realizan en efectivo directamente con tu distribuidor asignado.</p>
-<h2>6. TUS DERECHOS</h2>
-<p>Tienes derecho a acceder a tu información personal, solicitar corrección de datos incorrectos, solicitar la eliminación de tu cuenta y datos, y conocer el uso que se da a tu información.</p>
-<h2>7. RETENCIÓN DE DATOS</h2>
-<p>Los datos de créditos liquidados se conservan por 30 días. Al eliminar tu cuenta, tus datos son borrados de nuestros sistemas.</p>
-<h2>8. MENORES DE EDAD</h2>
+
+  <header>
+    <div class="logo-row">
+      <div class="logo-circle">C</div>
+      <div class="logo-name">CREDI<span>SOCIO</span></div>
+    </div>
+    <p class="header-tagline">Tu impulso financiero</p>
+    <h1 class="header-title">Política de Privacidad</h1>
+    <span class="header-fecha">Última actualización: Abril 2026</span>
+  </header>
+
+  <div class="contenedor">
+
+    <div class="intro-box">
+      En <strong>Credisocio</strong> valoramos y respetamos tu privacidad. Esta política describe
+      cómo recopilamos, usamos y protegemos tu información personal cuando utilizas nuestra
+      aplicación de servicios financieros.
+    </div>
+
+    <!-- 1 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">1</div>
+        <h2 class="sec-titulo">Información que recopilamos</h2>
+      </div>
+      <div class="sec-body">
+        <p>Credisocio recopila la siguiente información personal:</p>
+        <ul>
+          <li>Nombre completo</li>
+          <li>Número de teléfono celular</li>
+          <li>CURP</li>
+          <li>Domicilio (calle, colonia, código postal, ciudad y estado)</li>
+          <li>Fotografías de documentos de identidad (INE frente y reverso)</li>
+          <li>Comprobante de domicilio</li>
+          <li>Selfie para verificación de identidad</li>
+          <li>Datos de referencia personal (nombre, apellido, teléfono y relación)</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 2 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">2</div>
+        <h2 class="sec-titulo">Uso de la información</h2>
+      </div>
+      <div class="sec-body">
+        <p>La información recopilada se utiliza exclusivamente para:</p>
+        <ul>
+          <li>Verificar tu identidad como solicitante de crédito</li>
+          <li>Evaluar y aprobar solicitudes de crédito</li>
+          <li>Gestionar el historial de pagos y saldos</li>
+          <li>Generar comprobantes y folios de pago</li>
+          <li>Comunicarnos contigo sobre el estado de tu crédito mediante notificaciones y mensajes en la app</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 3 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">3</div>
+        <h2 class="sec-titulo">Almacenamiento y seguridad</h2>
+      </div>
+      <div class="sec-body">
+        <ul>
+          <li>Tu información se almacena en <strong>servidores cifrados</strong> con acceso restringido.</li>
+          <li>Solo el <strong>distribuidor asignado</strong> tiene acceso a tus documentos para gestionar tu crédito.</li>
+          <li><strong>No compartimos</strong> tu información personal con terceros sin tu consentimiento expreso, salvo obligación legal.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 4 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">4</div>
+        <h2 class="sec-titulo">Verificación por SMS</h2>
+      </div>
+      <div class="sec-body">
+        <p>
+          Al solicitar un préstamo, Credisocio puede enviar un <strong>código de verificación
+          por SMS</strong> a tu número de teléfono mediante el proveedor <strong>Twilio Inc.</strong>,
+          con el único propósito de verificar que eres el titular del número registrado.
+        </p>
+        <p>
+          Este servicio no almacena tu número de teléfono más allá del tiempo necesario para
+          completar la verificación.
+        </p>
+      </div>
+    </section>
+
+    <!-- 5 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">5</div>
+        <h2 class="sec-titulo">Datos de pago</h2>
+      </div>
+      <div class="sec-body">
+        <div class="highlight">
+          ✓ Credisocio <strong>NO procesa pagos dentro de la aplicación</strong>. Todos los
+          pagos se realizan en <strong>efectivo</strong> directamente con el distribuidor
+          asignado a tu zona.
+        </div>
+        <p style="margin-top:12px;">
+          No recopilamos datos de tarjetas de crédito, débito ni cuentas bancarias para
+          procesar cobros. La CLABE interbancaria registrada se utiliza únicamente para el
+          desembolso de préstamos aprobados.
+        </p>
+      </div>
+    </section>
+
+    <!-- 6 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">6</div>
+        <h2 class="sec-titulo">Tus derechos</h2>
+      </div>
+      <div class="sec-body">
+        <p>
+          Tienes derecho en todo momento a ejercer los siguientes derechos sobre tu
+          información personal:
+        </p>
+        <div class="arco-grid">
+          <div class="arco-card">
+            <div class="arco-letra">A</div>
+            <div class="arco-nombre">Acceso</div>
+            <div class="arco-desc">Conocer qué datos tenemos sobre ti.</div>
+          </div>
+          <div class="arco-card">
+            <div class="arco-letra">R</div>
+            <div class="arco-nombre">Rectificación</div>
+            <div class="arco-desc">Corregir datos inexactos o incompletos.</div>
+          </div>
+          <div class="arco-card">
+            <div class="arco-letra">C</div>
+            <div class="arco-nombre">Cancelación</div>
+            <div class="arco-desc">Solicitar la eliminación de tus datos.</div>
+          </div>
+          <div class="arco-card">
+            <div class="arco-letra">O</div>
+            <div class="arco-nombre">Oposición</div>
+            <div class="arco-desc">Oponerte a ciertos usos de tu información.</div>
+          </div>
+        </div>
+        <p style="margin-top:16px;">
+          Para ejercer cualquiera de estos derechos, contáctanos directamente a través
+          de la aplicación Credisocio.
+        </p>
+      </div>
+    </section>
+
+    <!-- 7 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">7</div>
+        <h2 class="sec-titulo">Retención de datos</h2>
+      </div>
+      <div class="sec-body">
+        <ul>
+          <li>Los registros de <strong>créditos liquidados</strong> se conservan durante
+          <strong>30 días</strong> para referencia del cliente y el distribuidor, y
+          posteriormente se eliminan de las vistas activas de la aplicación.</li>
+          <li>Al solicitar la <strong>eliminación de tu cuenta</strong>, todos tus datos
+          personales serán borrados de nuestros sistemas, salvo obligación legal de
+          conservarlos.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 8 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">8</div>
+        <h2 class="sec-titulo">Menores de edad</h2>
+      </div>
+      <div class="sec-body">
+        <div class="badge-aviso">
+          &#9888; Servicio exclusivo para mayores de edad
+        </div>
+        <p>
+          Credisocio <strong>no está dirigida a menores de 18 años</strong>. No recopilamos
+          conscientemente información personal de menores. Si detectamos que se ha registrado
+          un menor de edad, eliminaremos su información de inmediato.
+        </p>
+      </div>
+    </section>
+
+    <!-- 9 -->
+    <section>
+      <div class="sec-header">
+        <div class="sec-num">9</div>
+        <h2 class="sec-titulo">Contacto</h2>
+      </div>
+      <div class="sec-body">
+        <p>
+          Para cualquier duda, aclaración o ejercicio de tus derechos sobre privacidad,
+          puedes contactarnos directamente a través de la aplicación <strong>Credisocio</strong>.
+        </p>
+        <div class="contacto-box">
+          <div class="contacto-item">
+            <span class="contacto-icon">📱</span>
+            <span>Contáctanos desde la sección <strong style="color:#fff;">Perfil &rarr; Soporte</strong> dentro de la app Credisocio</span>
+          </div>
+        </div>
+        <p style="margin-top:16px; font-size:13px; color:#666;">
+          Atendemos solicitudes de lunes a viernes en horario hábil del centro de México.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2026 <strong>Credisocio</strong> · Celaya, Guanajuato, México.<br>
+      Todos los derechos reservados.
+    </p>
+  </footer>
+
+</body>
+</html>
